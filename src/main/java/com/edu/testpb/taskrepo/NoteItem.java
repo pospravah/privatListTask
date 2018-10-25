@@ -1,12 +1,16 @@
 package com.edu.testpb.taskrepo;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
 @Data
+@Getter
+@Setter
 @Entity
 public class NoteItem {
 
@@ -14,8 +18,8 @@ public class NoteItem {
     private LocalDate startDate;
     private LocalDate endDate;
     private String description;
-    @OneToMany
-    private List<com.edu.testpb.taskrepo.User> assigned;
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<User> assigned;
 
     public NoteItem() {
     }
