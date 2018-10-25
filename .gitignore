@@ -1,0 +1,27 @@
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/*
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+bower_components
+node_modules
+node
+*.log
+README.html
+built
+dump.rdb
+package-lock.json
