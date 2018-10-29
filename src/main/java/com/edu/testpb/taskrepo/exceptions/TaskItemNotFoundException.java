@@ -1,4 +1,4 @@
-package com.edu.testpb.taskrepo;
+package com.edu.testpb.taskrepo.exceptions;
 
 public class TaskItemNotFoundException extends RuntimeException {
 

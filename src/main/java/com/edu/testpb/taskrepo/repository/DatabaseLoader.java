@@ -1,12 +1,13 @@
-package com.edu.testpb.taskrepo;
+package com.edu.testpb.taskrepo.repository;
 
+import com.edu.testpb.taskrepo.entity.NoteItem;
+import com.edu.testpb.taskrepo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 @Component

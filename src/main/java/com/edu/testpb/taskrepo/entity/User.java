@@ -1,4 +1,4 @@
-package com.edu.testpb.taskrepo;
+package com.edu.testpb.taskrepo.entity;
 
 import lombok.Data;
 

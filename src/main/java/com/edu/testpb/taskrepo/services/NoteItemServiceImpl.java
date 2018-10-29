@@ -1,11 +1,17 @@
-package com.edu.testpb.taskrepo;
+package com.edu.testpb.taskrepo.services;
 
+import com.edu.testpb.taskrepo.entity.NoteItem;
+import com.edu.testpb.taskrepo.repository.NoteRepository;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Setter
+@Getter
 @Service
 public class NoteItemServiceImpl implements NoteItemService {
 
