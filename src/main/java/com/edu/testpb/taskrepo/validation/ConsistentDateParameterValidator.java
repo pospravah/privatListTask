@@ -9,13 +9,10 @@ import javax.validation.constraintvalidation.ValidationTarget;
 import java.time.LocalDate;
 
 @SupportedValidationTarget(ValidationTarget.PARAMETERS)
-public class ConsistentDateParameterValidator
-        implements ConstraintValidator<DatesMatch, Object[]> {
+public class ConsistentDateParameterValidator implements ConstraintValidator<DatesMatch, Object[]> {
 
     @Override
-    public boolean isValid(
-            Object[] value,
-            ConstraintValidatorContext context) {
+    public boolean isValid(Object[] value, ConstraintValidatorContext context) {
 
         System.out.println("--- ConsistentDateParameterValidator --- value --- " );
         NoteItem temp = (NoteItem)value[0];
@@ -31,7 +28,6 @@ public class ConsistentDateParameterValidator
         if (lStart == null || lEnd == null) {
             return true;
         }
-
-        return lEnd.isAfter(lStart);
+        return lEnd.isAfter(lStart)||lEnd.isEqual(lStart) ;
     }
 }

@@ -5,24 +5,23 @@ import com.edu.testpb.taskrepo.services.NoteItemService;
 import com.edu.testpb.taskrepo.services.UserService;
 import com.edu.testpb.taskrepo.exceptions.TaskItemNotFoundException;
 import com.edu.testpb.taskrepo.exceptions.UsersNotFoundException;
+import com.edu.testpb.taskrepo.utils.AssignmentUtil;
 import com.edu.testpb.taskrepo.validation.DatesMatch;
+import com.edu.testpb.taskrepo.validation.UserPerDatesMatch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StreamUtils;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.util.List;
 
 @RestController
-//@Validated
 @RequestMapping("/api")
 public class ApiController {
 
@@ -30,10 +29,14 @@ public class ApiController {
     NoteItemService noteService;
 
     @Autowired
+    AssignmentUtil util;
+
+    @Autowired
     UserService userService;
 
     @GetMapping("/tasklist")
-    public List<NoteItem> getTasksList(){
+    public List<NoteItem> getTasksList()
+    {
         return noteService.getItemList();
     }
 
@@ -60,6 +63,7 @@ public class ApiController {
 
     @Transactional
     @DatesMatch
+    @UserPerDatesMatch
     @PostMapping("/task")
     public NoteItem addTaskItem(@RequestBody NoteItem theItem){
         theItem.setId((long) 0);

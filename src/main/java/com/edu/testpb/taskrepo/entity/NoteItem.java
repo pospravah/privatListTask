@@ -1,6 +1,7 @@
 package com.edu.testpb.taskrepo.entity;
 
 import com.edu.testpb.taskrepo.validation.DatesMatch;
+import com.edu.testpb.taskrepo.validation.UserPerDatesMatch;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,6 +29,7 @@ public class NoteItem {
     private List<User> assigned;
 
     @DatesMatch
+    @UserPerDatesMatch
     public NoteItem(LocalDate startDate, LocalDate endDate, String description, List<User> users) {
         System.out.println("---NoteItem--- constructor: ");
         this.id = null;

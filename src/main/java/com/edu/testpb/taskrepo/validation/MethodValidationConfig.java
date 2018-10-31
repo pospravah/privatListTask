@@ -11,6 +11,8 @@ public class MethodValidationConfig {
 
     @Bean
     public MethodValidationPostProcessor methodValidationPostProcessor() {
+        System.out.println("----- MethodValidationConfig -----" );
         return new MethodValidationPostProcessor();
     }
+
 }

@@ -2,6 +2,7 @@ package com.edu.testpb.taskrepo.services;
 
 import com.edu.testpb.taskrepo.entity.NoteItem;
 import com.edu.testpb.taskrepo.repository.NoteRepository;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
